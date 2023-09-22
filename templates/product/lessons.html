@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}List Product{% endblock title %}
+
+{%block content %}
+<table class="table mt-5 table-bordered table-strited table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Название продукта</th>
+      <th>Название урока</th>
+      <th>Владелец продукта</th>
+      <th>Ссылка на урок</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for lesson in lessons %}
+    <tr>
+      <td>{{ lesson.product }}</td>
+      <td>{{ lesson.title }}</td>
+      <td>{{ lesson.owner }}</td>
+      <td><a href={% url "product:single_lesson" lesson.id %}>Просмотр видео урока</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

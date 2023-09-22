@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ lesson.title }}{% endblock %}
+
+{% block content %}
+
+<h1 class="mt-5"> {{lesson.product}}</h1>
+<p>Название урока: {{lesson.title}}</p>
+<p>Видео: <iframe width="560"
+									height="315"
+									src={{lesson.url_path}}
+									title="YouTube video player" 
+									frameborder="0" 
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+									allowfullscreen></iframe></p>
+<p>Длительность просмотра видео в сек.: {{lesson.during_veiw}}</p>
+<p>Статус просмотра: {{lesson.lesson_views}}</p>
+
+{% endblock %}
+
